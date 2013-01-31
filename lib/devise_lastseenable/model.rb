@@ -9,6 +9,11 @@ module Devise
           self.save!
         end
       end
+      
+      def stamp_logout!
+        self.last_sign_out_at = DateTime.now
+        self.save!
+      end
     end
   end
 end
